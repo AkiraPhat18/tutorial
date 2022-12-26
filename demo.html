@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<hr>
+    <head>
+        <title> Trane HTML </title>
+        <style>
+           #div1{
+                width: 350px;
+                height: 70px;
+                padding: 10px;
+                border: 1px solid #aaaaaa;
+           }
+        </style>
+
+        <script>
+            //thả vào đâu  (drop)
+            //Khi dữ liệu được thả vào một phần tử nào đó, thì sự kiện drop sẽ phát sinh. Mặc định thì dữ liệu hay phần tử này không có phép thả lên phần tử khác. Nên muốn cho phép thả vào một phần tử thì cần gọi phương thức event.preventDefault() thiết lập tại thuộc tính ondragover.
+            function allowDrop(ev){
+                ev.preventDefault();
+            }    
+
+            //kéo cái gì (drag)
+            //Khi một phần tử được kéo, nó sẽ gọi hàm được chỉ ra trong thuộc tính ondragstart="function_name(event)"
+            //dữ liệu sự kiện event trong tham số hàm có chứa dữ liệu phần tử được kéo và gọi phương thức event.dataTransfer.setData() để lưu lại
+            function drag(ev){
+                ev.dataTransfrer.setData("text", ev.target.id);
+            }
+
+            //xử lý thả phần tử drop
+            function drop(ev){
+                //Gọi hàm này để ngăn cản trình duyệt xử lý  mặc định sự kiện drop
+                ev.preventDefault();
+
+                //Lấy dữ liệu text thả vào từ ID phần tử ở trên
+                var data = ev.dataTransfrer.getData("text");
+
+                //Di chuyển phần tử kéo vào phần tử thả
+                ev.target.appendChild(document.getElementById(data));
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box"
+            ondrop = "drop(event)";
+            ondragover =  "allowDrop(event)";
+            style  = "border:1px solid black; width:300px; height:300px">
+        </div>
+    
+        </hr>
+    
+        <div draggable="true" ondragstart="drag(event)" id="divdrag">
+            <img  src="https://www.google.com.vn/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" draggable="false"/>
+            <p>Logo Google</p>
+        </div>
+    </body>
+
+
+    
+</html>
