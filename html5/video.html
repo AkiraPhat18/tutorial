@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video controls>
+        <source src="video.webm" type="video/webm">
+        <source src="video.ogg"  type="video/ogg">
+        <source src="video.mp4"  type="video/mp4">
+    </video >
+    <!-- controls: thực hiện các tác vụ với video như play, pause và volume. -->
+
+    <!-- width và height: set chiều cao và chiều rộng cho video. Nếu chiều cao và chiều rộng không được đặt, trang có thể nhấp nháy trong khi tải video.
+
+    <source>: cho phép bạn chỉ định các video thay thế mà trình duyệt hỗ trợ. Trình duyệt sẽ sử dụng định dạng được nhận dạng đầu tiên.
+
+    Đoạn text trong thẻ <video>Some text</video> sẽ chỉ được hiển thị trong các trình duyệt không hỗ trợ <video>.
+
+    autoplay: tự động start video. Lưu ý: thuộc tính này không hỗ trợ trên các devices mobile như iPhone, iPad.  -->
+    <!-- poster: thuộc tính này cho phép truyền vào một image URL, hình ảnh này sẽ hiển thị trong khi video đang tải xuống hoặc cho đến khi nhấn play. Ví dụ: -->
+<video poster="image.png"></video>
+
+    <!-- preload: xác định việc tập tin video có được tải cùng với lúc tải trang hay không.
+    muted: video sẽ mặc định được thiết lập ở chế độ "im lặng".
+    loop: video sẽ tự động được phát lặp lại sau mỗi lần kết thúc. -->
+</body>
+</html> 
